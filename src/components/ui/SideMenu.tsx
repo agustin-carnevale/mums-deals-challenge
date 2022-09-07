@@ -25,7 +25,13 @@ export const SideMenu: FC = () => {
   };
 
   return (
-    <Box sx={{ paddingTop: 5, height: "100vh", border: "1px solid #63605f" }}>
+    <Box
+      sx={{
+        paddingTop: 2,
+        height: { xs: "90px", sm: "100vh" },
+        border: "1px solid #63605f",
+      }}
+    >
       <Box
         sx={{ display: "flex", alignItems: "center", flexDirection: "column" }}
       >

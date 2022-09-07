@@ -1,6 +1,6 @@
 import { FC, useContext } from "react";
 import { Box, IconButton, Toolbar, Typography } from "@mui/material";
-import { DisplaySettings, SmartDisplayOutlined } from "@mui/icons-material";
+import { FormatListBulleted, GridView } from "@mui/icons-material";
 import { ProductsContext } from "../../context";
 import { Display } from "../../interfaces";
 
@@ -19,10 +19,10 @@ export const Navbar: FC<NavBarProps> = (props) => {
 
       <Box>
         <IconButton onClick={() => setDisplay(Display.Grid)}>
-          <DisplaySettings />
+          <GridView />
         </IconButton>
         <IconButton onClick={() => setDisplay(Display.List)}>
-          <SmartDisplayOutlined />
+          <FormatListBulleted />
         </IconButton>
       </Box>
     </Toolbar>

@@ -21,18 +21,18 @@ export const HomeLayout: FC<HomeLayoutProps> = ({ title, children }) => {
           border: "1px solid #63605f",
         }}
       >
-        <Typography variant="h4" component="h4">
+        <Typography variant="h4" component="h4" sx={{fontSize:{xs: "16px", sm: "20px", md: "30px"}}}>
           {title}
         </Typography>
       </Box>
 
       <Grid container>
-        <Grid item xs={3} md={2}>
+        <Grid item xs={12} sm={3} md={2} sx={{display:{xs: "none", sm: "block"}}}>
           <aside>
             <SideMenu />
           </aside>
         </Grid>
-        <Grid item xs={9} md={10}>
+        <Grid item xs={12} sm={9} md={10}>
           <nav>
             <Navbar />
           </nav>
