@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useContext, useEffect } from "react";
+import { HomeLayout } from "./components/layouts";
+import { ProductsGrid } from "./components/products";
+import { ProductsList } from "./components/products";
+import { ProductsContext } from "./context";
+import { Display } from "./interfaces";
 
-function App() {
+const App = () => {
+  const { display, filteredResults, fetchProducts } =
+    useContext(ProductsContext);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HomeLayout title="Welcome to the Mum's Deals Page!">
+      {display === Display.Grid ? (
+        <ProductsGrid products={filteredResults} />
+      ) : (
+        <ProductsList products={filteredResults} />
+      )}
+    </HomeLayout>
   );
-}
+};
 
 export default App;
